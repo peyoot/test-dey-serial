@@ -1,12 +1,13 @@
-BINARY := test-serial
+BINARY := serial_test
 CFLAGS += -Wall -o0
 
 .PHONY: all
 all: $(BINARY)
 
-$(BINARY): test-serial.o
+$(BINARY): serial_test.o
 
 .PHONY: clean 
+
 clean:
--rm -rf *.o $BINARY)
+	rm -f *.o $(BINARY)
 
