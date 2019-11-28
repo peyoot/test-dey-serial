@@ -1,11 +1,12 @@
-CFLAGS = -Wall -g -D_GNU_SOURCE
+BINARY := test-serial
+CFLAGS += -Wall -o0
 
-all: serial_test
-Serial_test: serial_test.o
+.PHONY: all
+all: $(BINARY)
 
-%.o: %.c
+$(BINARY): test-serial.o
 
-PHONY: clean
+.PHONY: clean 
 clean:
-       rm -rf *.o serial_test
+-rm -rf *.o $BINARY)
 
